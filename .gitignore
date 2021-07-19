@@ -1,0 +1,18 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/FestivalDataApi.BusinessLogic/bin/Debug/netcoreapp3.1
+/FestivalDataApi.BusinessLogic/obj
+/FestivalDataApi.DataModels/bin/Debug/netcoreapp3.1
+/FestivalDataApi.DataModels/obj
+/FestivalDataApi.IntegrationTests/bin/Debug/netcoreapp3.1
+/FestivalDataApi.IntegrationTests/obj
+/FestivalDataApi.UnitTests/obj
+/FestivalDataApi/bin/Debug/netcoreapp3.1
+/FestivalDataApi/obj
+*.user
+/FestivalDataApi.UnitTests/bin/Debug/netcoreapp3.1
+/FestivalDataApi.Utilities/bin/Debug/netcoreapp3.1
+/FestivalDataApi.Utilities/obj
