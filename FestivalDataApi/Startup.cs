@@ -14,6 +14,7 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using Serilog;
 
 namespace FestivalDataApi
 {
@@ -87,6 +88,7 @@ namespace FestivalDataApi
         /// <param name="provider"></param>
         public void Configure(IApplicationBuilder app,
                               IWebHostEnvironment env,
+                              IHostApplicationLifetime appLifetime,
                               IApiDescriptionGroupCollectionProvider provider)
         {
             if (env.IsDevelopment())
@@ -107,6 +109,12 @@ namespace FestivalDataApi
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            //Ensure any buffered events are sent at shutdown
+
+            appLifetime.ApplicationStopped.Register(Log.CloseAndFlush);
+
+            app.UseSerilogRequestLogging();
 
             app.UseAuthorization();
 

@@ -38,7 +38,7 @@ namespace FestivalDataApi
         }
 
         /// <summary>
-        /// The host builder
+        /// Create and configure the host with required services
         /// </summary>
         /// <param name="args"></param>
         /// <returns></returns>
@@ -46,13 +46,13 @@ namespace FestivalDataApi
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>();
-                    //.UseSerilog((context, loggerConfiguration) =>
-                    //{
-                    //    loggerConfiguration
-                    //        .Configure(context.HostingEnvironment.EnvironmentName)
-                    //        .ReadFrom.Configuration(context.Configuration);
-                    //});
-                });
+                    webBuilder.UseStartup<Startup>()
+                    .UseSerilog((context, loggerConfiguration) =>
+					{
+						loggerConfiguration
+							.Configure(context.HostingEnvironment.EnvironmentName)
+							.ReadFrom.Configuration(context.Configuration);
+					});
+				});
     }
 }

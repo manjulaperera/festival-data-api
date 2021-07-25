@@ -19,5 +19,5 @@ This is developed as part of the Energy Australia coding test.
 ## Notes
 
 - Dependancy injection is done in the 'FestivalDataApi\Startup.cs' file.
-- Error logging is configured for text file logging for simplicity.
+- Added middlewear for exception handling and error logging with Serilog sinks to file. Error logging is configured for text file logging for simplicity.
 
